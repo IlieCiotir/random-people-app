@@ -1,0 +1,12 @@
+<div class="tile person" *ngFor="let person of persons; let index = index" (click)="remove(index)">
+  <img [src]=" person.picture.large ">
+  <div class="name ">
+    <span>{{person.name.first}}</span>
+    <span>{{person.name.last}}</span>
+  </div>
+  <div class="email ">
+    {{person.email}}
+  </div>
+</div>
+<div class="tile loading " *ngIf="loading ">...</div>
+<div class="tile add " *ngIf="!loading " (click)="addMorePeople() ">+</div>
